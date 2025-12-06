@@ -21,9 +21,9 @@ export default async function ProjectPage({ params }: { params: { slug: string }
           <p className="text-xs uppercase tracking-[0.24em] text-muted">{project.frontmatter.tags.join(" · ")}</p>
         )}
         {project.frontmatter.link && (
-          <Link href={project.frontmatter.link} className="text-foreground underline decoration-dotted">
+          <a href={project.frontmatter.link} className="text-foreground underline decoration-dotted">
             Live link ↗
-          </Link>
+          </a>
         )}
       </div>
       <div className="prose prose-invert mt-8 max-w-none text-base leading-7">
