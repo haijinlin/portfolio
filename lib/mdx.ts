@@ -44,7 +44,8 @@ export async function getMdxContent(folder: string, slug: string) {
       parseFrontmatter: true,
       mdxOptions: {
         remarkPlugins: [remarkGfm],
-        rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }]]
+        // Cast rehype plugins to avoid type mismatches across versions
+        rehypePlugins: [rehypeSlug as unknown as any, [rehypeAutolinkHeadings as unknown as any, { behavior: "wrap" }]] as any
       }
     }
   });
