@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import type { Project } from "@/lib/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
@@ -27,9 +26,9 @@ export function ProjectCard({ project }: { project: Project }) {
       {project.impact && <p className="mt-3 text-sm text-muted-foreground">{project.impact}</p>}
       <div className="mt-4 flex items-center gap-3 text-sm font-medium text-foreground">
         {project.link && (
-          <Link href={project.link} className="text-muted-foreground transition hover:text-foreground">
+          <a href={project.link} className="text-muted-foreground transition hover:text-foreground" target="_blank" rel="noreferrer">
             Live ↗
-          </Link>
+          </a>
         )}
       </div>
     </motion.article>

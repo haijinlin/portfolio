@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const quickLinks = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
@@ -18,27 +16,27 @@ export function Footer() {
         <div className="space-y-1">
           <p className="text-foreground">Open to web/front-end and marketing tech roles</p>
           <p>Melbourne, VIC</p>
-          <Link
+          <a
             href="mailto:contact@haydenlin.com.au"
             className="inline-flex w-fit font-medium text-muted-foreground transition hover:text-foreground"
           >
             contact@haydenlin.com.au
-          </Link>
+          </a>
         </div>
 
         <div className="flex flex-col gap-3 text-sm text-muted-foreground md:items-end">
           <div className="flex flex-wrap gap-4">
             {quickLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="hover:text-foreground">
+              <a key={link.href} href={link.href} className="hover:text-foreground">
                 {link.label}
-              </Link>
+              </a>
             ))}
           </div>
           <div className="flex flex-wrap gap-4">
             {socials.map((link) => (
-              <Link key={link.href} href={link.href} className="hover:text-foreground">
+              <a key={link.href} href={link.href} className="hover:text-foreground" target="_blank" rel="noreferrer">
                 {link.label}
-              </Link>
+              </a>
             ))}
           </div>
         </div>

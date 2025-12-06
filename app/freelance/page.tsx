@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Section } from "@/components/section";
 
 export const metadata = {
@@ -63,18 +62,18 @@ export default function FreelancePage() {
               I build and maintain sites, connect analytics and ads, and handle ongoing support. Based in Melbourne, available for remote or hybrid work.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link
+              <a
                 href="https://haydenlin.com.au"
                 className="rounded-full bg-foreground px-5 py-2 text-background transition hover:-translate-y-0.5 hover:shadow-glow"
               >
                 View haydenlin.com.au
-              </Link>
-              <Link
+              </a>
+              <a
                 href="mailto:contact@haydenlin.com.au?subject=Freelance%20inquiry"
                 className="rounded-full border border-border px-5 py-2 transition hover:-translate-y-0.5 hover:border-foreground"
               >
                 Email about a project
-              </Link>
+              </a>
             </div>
           </div>
           <div className="w-full max-w-md rounded-2xl border border-border bg-card/60 p-5 shadow-sm backdrop-blur">
@@ -119,18 +118,18 @@ export default function FreelancePage() {
 
       <Section title="Ready to talk?" eyebrow="Next steps">
         <div className="flex flex-wrap items-center gap-3">
-          <Link
+          <a
             href="https://haydenlin.com.au"
             className="rounded-full bg-foreground px-5 py-2 text-background transition hover:-translate-y-0.5 hover:shadow-glow"
           >
             Visit haydenlin.com.au
-          </Link>
-          <Link
+          </a>
+          <a
             href="mailto:contact@haydenlin.com.au?subject=Freelance%20inquiry"
             className="rounded-full border border-border px-5 py-2 transition hover:-translate-y-0.5 hover:border-foreground"
           >
             Email Hayden
-          </Link>
+          </a>
           <p className="text-sm text-muted-foreground">Melbourne-based, open to remote/hybrid.</p>
         </div>
       </Section>

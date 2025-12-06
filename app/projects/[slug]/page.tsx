@@ -1,5 +1,4 @@
 ﻿import { notFound } from "next/navigation";
-import Link from "next/link";
 import { getProject, getProjectSlugs } from "@/lib/projects";
 import { Section } from "@/components/section";
 

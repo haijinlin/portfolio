@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 export function Hero() {
@@ -26,18 +25,18 @@ export function Hero() {
             Melbourne-based (Permanent Resident). Master of Computing and Innovation (University of Adelaide). Background across web development, digital marketing operations, and IT support.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link
+            <a
               href="mailto:contact@haydenlin.com.au"
               className="rounded-full bg-foreground px-5 py-2 text-background transition hover:-translate-y-0.5 hover:shadow-glow"
             >
               Email Hayden
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://linkedin.com"
               className="rounded-full border border-border px-5 py-2 transition hover:-translate-y-0.5 hover:border-foreground"
             >
               LinkedIn
-            </Link>
+            </a>
           </div>
         </motion.div>
       </div>
