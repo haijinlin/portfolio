@@ -1,16 +1,15 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { href: "/", label: "Home", external: false },
-  { href: "/projects", label: "Projects", external: false },
-  { href: "/freelance", label: "Freelance", external: false },
-  { href: "mailto:contact@haydenlin.com.au", label: "Contact", external: true }
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Projects" },
+  { href: "/freelance", label: "Freelance" },
+  { href: "mailto:contact@haydenlin.com.au", label: "Contact" }
 ];
 
 export function Nav() {
@@ -20,9 +19,9 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-20 border-b border-border/60 bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <Link href="/" className="text-sm font-semibold uppercase tracking-[0.28em]">
+        <a href="/" className="text-sm font-semibold uppercase tracking-[0.28em]">
           Hayden Lin
-        </Link>
+        </a>
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-3 text-sm md:flex">
@@ -72,30 +71,19 @@ export function Nav() {
             className="border-t border-border/60 bg-background/95 backdrop-blur md:hidden"
           >
             <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-4 text-sm">
-              {navLinks.map((link) =>
-                link.external ? (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="flex items-center justify-between py-1 text-foreground/90 transition hover:text-foreground"
-                  >
-                    <span>{link.label}</span>
-                  </a>
-                ) : (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="flex items-center justify-between py-1 text-foreground/90 transition hover:text-foreground"
-                  >
-                    <span>{link.label}</span>
-                    {pathname === link.href && (
-                      <span className="h-[2px] w-12 rounded bg-gradient-to-r from-accent via-foreground to-accent-2" />
-                    )}
-                  </Link>
-                )
-              )}
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="flex items-center justify-between py-1 text-foreground/90 transition hover:text-foreground"
+                >
+                  <span>{link.label}</span>
+                  {pathname === link.href && (
+                    <span className="h-[2px] w-12 rounded bg-gradient-to-r from-accent via-foreground to-accent-2" />
+                  )}
+                </a>
+              ))}
               <div className="pt-2">
                 <ThemeToggle />
               </div>
@@ -107,32 +95,23 @@ export function Nav() {
   );
 }
 
-function NavLink({ link, active }: { link: { href: string; label: string; external?: boolean }; active: boolean }) {
+function NavLink({ link, active }: { link: { href: string; label: string }; active: boolean }) {
   return (
     <div className="group relative">
-      {link.external ? (
-        <a
-          href={link.href}
-          className="relative inline-flex items-center px-2 py-1 font-medium text-foreground/90 transition group-hover:text-foreground"
-        >
-          <span>{link.label}</span>
-        </a>
-      ) : (
-        <Link
-          href={link.href}
-          className="relative inline-flex items-center px-2 py-1 font-medium text-foreground/90 transition group-hover:text-foreground"
-        >
-          <span>{link.label}</span>
-          <span className="pointer-events-none absolute -bottom-0.5 left-0 h-[2px] w-full origin-left scale-x-0 rounded bg-gradient-to-r from-accent via-foreground to-accent-2 opacity-0 transition-transform transition-opacity duration-250 ease-out group-hover:scale-x-100 group-hover:opacity-100" />
-          {active && (
-            <motion.span
-              layoutId="nav-active"
-              className="pointer-events-none absolute -bottom-0.5 left-0 h-[2px] w-full rounded bg-gradient-to-r from-accent via-foreground to-accent-2"
-              transition={{ type: "spring", stiffness: 260, damping: 22 }}
-            />
-          )}
-        </Link>
-      )}
+      <a
+        href={link.href}
+        className="relative inline-flex items-center px-2 py-1 font-medium text-foreground/90 transition group-hover:text-foreground"
+      >
+        <span>{link.label}</span>
+        <span className="pointer-events-none absolute -bottom-0.5 left-0 h-[2px] w-full origin-left scale-x-0 rounded bg-gradient-to-r from-accent via-foreground to-accent-2 opacity-0 transition-transform transition-opacity duration-250 ease-out group-hover:scale-x-100 group-hover:opacity-100" />
+        {active && (
+          <motion.span
+            layoutId="nav-active"
+            className="pointer-events-none absolute -bottom-0.5 left-0 h-[2px] w-full rounded bg-gradient-to-r from-accent via-foreground to-accent-2"
+            transition={{ type: "spring", stiffness: 260, damping: 22 }}
+          />
+        )}
+      </a>
     </div>
   );
 }
