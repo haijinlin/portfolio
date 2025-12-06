@@ -217,21 +217,12 @@ export default async function HomePage() {
             <div key={item.label} className="rounded-xl border border-border bg-card/60 p-4">
               <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">{item.label}</p>
               {item.href ? (
-                item.href.startsWith("/") ? (
-                  <Link
-                    href={item.href}
-                    className="text-base font-medium underline underline-offset-4 decoration-transparent hover:decoration-current transition"
-                  >
-                    {item.value}
-                  </Link>
-                ) : (
-                  <a
-                    href={item.href}
-                    className="text-base font-medium underline underline-offset-4 decoration-transparent hover:decoration-current transition"
-                  >
-                    {item.value}
-                  </a>
-                )
+                <a
+                  href={item.href}
+                  className="text-base font-medium underline underline-offset-4 decoration-transparent hover:decoration-current transition"
+                >
+                  {item.value}
+                </a>
               ) : (
                 <p className="text-base font-medium">{item.value}</p>
               )}
