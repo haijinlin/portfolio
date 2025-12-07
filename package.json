@@ -11,12 +11,12 @@
   "dependencies": {
     "@mdx-js/loader": "2.3.0",
     "@mdx-js/mdx": "2.3.0",
-    "@next/mdx": "14.2.5",
+    "@next/mdx": "^15.0.3",
     "autoprefixer": "10.4.20",
     "clsx": "2.1.0",
     "framer-motion": "11.0.0",
     "gray-matter": "4.0.3",
-    "next": "^14.2.33",
+    "next": "^15.0.3",
     "next-mdx-remote": "5.0.0",
     "next-themes": "0.2.1",
     "react": "18.3.1",
@@ -30,8 +30,8 @@
     "@types/node": "20.12.12",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
-    "eslint": "8.57.0",
-    "eslint-config-next": "^16.0.7",
+    "eslint": "^9.11.1",
+    "eslint-config-next": "^15.0.3",
     "postcss": "8.4.38",
     "typescript": "5.4.5"
   }
