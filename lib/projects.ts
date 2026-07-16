@@ -1,5 +1,6 @@
 ﻿import type { ReactNode } from "react";
 import { getMdxContent, getMdxList, getMdxSlugs } from "@/lib/mdx";
+import type { GalleryImage } from "@/components/project-gallery";
 
 export type Project = {
   slug: string;
@@ -14,6 +15,7 @@ export type Project = {
   featured?: boolean;
   access?: "private" | "demo" | "public";
   image?: string;
+  gallery?: GalleryImage[];
 };
 
 export async function getProjects(): Promise<Project[]> {

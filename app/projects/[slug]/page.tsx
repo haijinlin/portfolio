@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, getProjects, getProjectSlugs } from "@/lib/projects";
 import { Section } from "@/components/section";
+import { ProjectGallery } from "@/components/project-gallery";
 
 export async function generateStaticParams() {
   const slugs = await getProjectSlugs();
@@ -39,6 +40,8 @@ export default async function ProjectPage({ params }: { params: { slug: string }
           </a>
         )}
       </div>
+
+      {project.frontmatter.gallery && <ProjectGallery images={project.frontmatter.gallery} />}
 
       <div className="prose prose-invert mt-8 max-w-none text-base leading-7">
         {project.content}

@@ -14,6 +14,10 @@ export type BaseFrontmatter = {
   impact?: string;
   link?: string;
   role?: string;
+  featured?: boolean;
+  access?: "private" | "demo" | "public";
+  image?: string;
+  gallery?: Array<{ src: string; alt: string; label: string }>;
 };
 
 const contentDir = path.join(process.cwd(), "content");
