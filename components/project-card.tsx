@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import type { Project } from "@/lib/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
@@ -11,12 +12,10 @@ export function ProjectCard({ project }: { project: Project }) {
       className="group rounded-2xl border border-border bg-card/60 p-5 shadow-sm backdrop-blur"
     >
       <div className="mb-4 overflow-hidden rounded-xl border border-border/60 bg-gradient-to-br from-accent/10 via-card to-accent-2/10">
-        {project.slug === "lifehub" ? (
-          <div className="flex aspect-video w-full items-center justify-center bg-[radial-gradient(circle_at_25%_20%,rgba(123,212,255,0.25),transparent_38%),radial-gradient(circle_at_80%_80%,rgba(255,220,170,0.16),transparent_40%)]">
-            <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#182b45] px-6 py-4 text-white shadow-2xl">
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#b9dcf3] text-2xl text-[#1d537d]">✦</span>
-              <div><div className="text-xl font-bold tracking-tight">LifeHub</div><div className="text-[10px] uppercase tracking-[0.2em] text-slate-300">Six spaces · one home</div></div>
-            </div>
+        {project.image ? (
+          <div className="relative flex aspect-video w-full items-center justify-center bg-[radial-gradient(circle_at_28%_25%,rgba(123,212,255,0.2),transparent_38%),radial-gradient(circle_at_75%_75%,rgba(255,158,199,0.14),transparent_42%)]">
+            <div className="absolute inset-x-[18%] bottom-[-28%] h-1/2 rounded-full bg-accent/10 blur-3xl" />
+            <Image src={project.image} alt={`${project.title} app icon`} width={112} height={112} className="relative h-24 w-24 rounded-[22%] object-contain drop-shadow-2xl transition duration-300 group-hover:scale-105" />
           </div>
         ) : (
           <div className="aspect-video w-full bg-[radial-gradient(circle_at_30%_30%,rgba(123,212,255,0.15),transparent_40%),radial-gradient(circle_at_70%_20%,rgba(255,158,199,0.15),transparent_45%)]" />

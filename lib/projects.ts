@@ -13,6 +13,7 @@ export type Project = {
   role?: string;
   featured?: boolean;
   access?: "private" | "demo" | "public";
+  image?: string;
 };
 
 export async function getProjects(): Promise<Project[]> {
