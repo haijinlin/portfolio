@@ -17,7 +17,7 @@ export type BaseFrontmatter = {
   featured?: boolean;
   access?: "private" | "demo" | "public";
   image?: string;
-  gallery?: Array<{ src: string; alt: string; label: string }>;
+  gallery?: Array<{ src: string; alt: string; label: string; fit?: "cover" | "contain" }>;
 };
 
 const contentDir = path.join(process.cwd(), "content");

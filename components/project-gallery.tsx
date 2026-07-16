@@ -7,6 +7,7 @@ export type GalleryImage = {
   src: string;
   alt: string;
   label: string;
+  fit?: "cover" | "contain";
 };
 
 export function ProjectGallery({ images }: { images: GalleryImage[] }) {
@@ -19,7 +20,7 @@ export function ProjectGallery({ images }: { images: GalleryImage[] }) {
     <section className="my-9" aria-label="Project screenshots">
       <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_190px]">
         <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-black/20">
-          <Image src={active.src} alt={active.alt} fill sizes="(min-width: 1024px) 760px, 100vw" className="object-cover object-top" priority />
+          <Image src={active.src} alt={active.alt} fill sizes="(min-width: 1024px) 760px, 100vw" className={active.fit === "contain" ? "object-contain" : "object-cover object-top"} priority />
         </div>
 
         <div className="flex gap-3 overflow-x-auto pb-1 lg:grid lg:grid-rows-3 lg:overflow-visible lg:pb-0">
@@ -36,7 +37,7 @@ export function ProjectGallery({ images }: { images: GalleryImage[] }) {
                   : "border-border opacity-70 hover:border-accent/50 hover:opacity-100"
               }`}
             >
-              <Image src={image.src} alt="" fill sizes="190px" className="object-cover object-top transition group-hover:scale-[1.02]" />
+              <Image src={image.src} alt="" fill sizes="190px" className={`${image.fit === "contain" ? "object-contain" : "object-cover object-top"} transition group-hover:scale-[1.02]`} />
               <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent px-3 pb-2 pt-7 text-xs font-semibold text-white">
                 {image.label}
               </span>
