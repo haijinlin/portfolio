@@ -1,0 +1,70 @@
+---
+title: "LifeHub — Personal Life Management Platform"
+summary: "A modular platform bringing family coordination, life admin, household management, career tracking, fitness and family goals into one calm home base."
+tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Product Design"]
+date: "2026-07-16"
+category: "featured"
+role: "Product Designer & Full Stack Developer"
+featured: true
+access: "private"
+---
+
+## Overview
+
+LifeHub is a personal and family management platform I designed and built around real everyday workflows. It brings six independent applications into one consistent product experience while deliberately keeping sensitive data and production systems isolated.
+
+The first release is a secure launchpad rather than a risky rewrite. Each module remains independently deployable, retains its own database and access controls, and can still be opened directly if LifeHub is unavailable.
+
+## The problem
+
+Important information was spread across messages, calendars, notes and separate tools. Generic productivity software did not reflect the actual workflows involved, while combining every system too early would have introduced unnecessary migration and privacy risk.
+
+I needed a solution that made daily tools easier to reach without disrupting applications already in active use.
+
+## The solution
+
+I created a private, installable dashboard with a consistent navigation system and six purpose-built modules:
+
+- **CoCare** — shared parenting schedules, change requests and care coordination.
+- **RemindFlow** — bills, subscriptions, appointments and follow-up reminders.
+- **HomeStock** — household inventory, low-stock visibility and shopping management.
+- **Job Tracker** — job applications, interviews and follow-up actions.
+- **Workout** — training, nutrition, calendars and progress tracking.
+- **WishTree** — family wishes, goals and shared moments.
+
+## Architecture decision
+
+Instead of immediately merging six codebases and databases, LifeHub uses progressive integration:
+
+1. A unified private entry point with independent module links.
+2. A shared visual language across modules.
+3. Read-only summaries and a cross-module Action Center in later releases.
+4. Shared authentication or data services only where they provide a clear benefit.
+
+This approach protects working production systems, keeps failures isolated and allows every module to evolve independently.
+
+## Privacy and security
+
+Privacy was treated as a product requirement rather than an afterthought:
+
+- LifeHub has its own server-validated password and HTTP-only session cookie.
+- Module credentials and database connections are never passed through LifeHub.
+- Production and portfolio demo data remain separate.
+- Sensitive family modules are presented publicly through representative sample content rather than real accounts.
+- The platform remains usable through original module URLs if the hub is offline.
+
+## Product experience
+
+The dashboard uses a calm light-blue and warm-neutral visual system. It is responsive, installable on iOS and Android, supports standalone display and includes a daily rotating inspirational quote without external tracking or APIs.
+
+## What I learned
+
+- How to design a platform around real workflows instead of isolated CRUD screens.
+- How to balance product unification with operational safety.
+- How authentication boundaries affect both UX and architecture.
+- Why a staged migration can be more valuable than an immediate monorepo rewrite.
+- How privacy decisions can strengthen a product case study rather than limit it.
+
+## Next steps
+
+The next planned release introduces optional read-only module summaries and a unified Action Center. Any cross-module integration will be added incrementally, tested against isolated environments and designed so the existing applications continue working independently.

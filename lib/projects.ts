@@ -11,6 +11,8 @@ export type Project = {
   impact?: string;
   link?: string;
   role?: string;
+  featured?: boolean;
+  access?: "private" | "demo" | "public";
 };
 
 export async function getProjects(): Promise<Project[]> {

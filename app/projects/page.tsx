@@ -4,7 +4,10 @@ import { getProjects } from "@/lib/projects";
 
 export default async function ProjectsPage() {
   const projects = await getProjects();
-  const listed = projects.slice(0, 6);
+  const listed = [
+    ...projects.filter((project) => project.featured),
+    ...projects.filter((project) => !project.featured),
+  ];
 
   return (
     <Section title="Projects" eyebrow="What I’ve built">

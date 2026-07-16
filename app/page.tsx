@@ -5,7 +5,10 @@ import { getProjects } from "@/lib/projects";
 
 export default async function HomePage() {
   const projects = await getProjects();
-  const featured = projects.slice(0, 2);
+  const featured = [
+    ...projects.filter((project) => project.featured),
+    ...projects.filter((project) => !project.featured),
+  ].slice(0, 2);
 
   const highlights = [
     "Web & front-end delivery: Next.js/React, WordPress/PHP, HTML/CSS/JS; deliver, maintain, and optimize sites.",
