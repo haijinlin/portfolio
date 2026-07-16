@@ -23,15 +23,13 @@ gallery:
 
 ## Overview
 
-LifeHub is a personal and family management platform I designed and built around real everyday workflows. It brings six independent applications into one consistent product experience while deliberately keeping sensitive data and production systems isolated.
+LifeHub is a personal and family management platform I designed around real everyday workflows. It brings six independent applications into one consistent experience while deliberately keeping sensitive data and production systems isolated.
 
 The first release is a secure launchpad rather than a risky rewrite. Each module remains independently deployable, retains its own database and access controls, and can still be opened directly if LifeHub is unavailable.
 
 ## The problem
 
 Important information was spread across messages, calendars, notes and separate tools. Generic productivity software did not reflect the actual workflows involved, while combining every system too early would have introduced unnecessary migration and privacy risk.
-
-I needed a solution that made daily tools easier to reach without disrupting applications already in active use.
 
 ## The solution
 
@@ -40,7 +38,7 @@ I created a private, installable dashboard with a consistent navigation system a
 - **CoCare** — shared parenting schedules, change requests and care coordination.
 - **RemindFlow** — bills, subscriptions, appointments and follow-up reminders.
 - **HomeStock** — household inventory, low-stock visibility and shopping management.
-- **Job Tracker** — job applications, interviews and follow-up actions.
+- **ApplyTrackr** — job applications, interviews and follow-up actions.
 - **Workout** — training, nutrition, calendars and progress tracking.
 - **WishTree** — family wishes, goals and shared moments.
 
@@ -57,26 +55,19 @@ This approach protects working production systems, keeps failures isolated and a
 
 ## Privacy and security
 
-Privacy was treated as a product requirement rather than an afterthought:
-
 - LifeHub has its own server-validated password and HTTP-only session cookie.
 - Module credentials and database connections are never passed through LifeHub.
-- Production and portfolio demo data remain separate.
-- Sensitive family modules are presented publicly through representative sample content rather than real accounts.
-- The platform remains usable through original module URLs if the hub is offline.
+- Production and portfolio data remain separate.
+- Public case studies use synthetic screenshots rather than real accounts.
+- Original module URLs remain available if the hub is offline.
 
 ## Product experience
 
-The dashboard uses a calm light-blue and warm-neutral visual system. It is responsive, installable on iOS and Android, supports standalone display and includes a daily rotating inspirational quote without external tracking or APIs.
+The dashboard uses a calm light-blue and warm-neutral visual system. It is responsive, installable on iOS and Android, supports standalone display and includes a daily rotating inspirational quote without external tracking.
 
 ## What I learned
 
-- How to design a platform around real workflows instead of isolated CRUD screens.
-- How to balance product unification with operational safety.
-- How authentication boundaries affect both UX and architecture.
-- Why a staged migration can be more valuable than an immediate monorepo rewrite.
-- How privacy decisions can strengthen a product case study rather than limit it.
-
-## Next steps
-
-The next planned release introduces optional read-only module summaries and a unified Action Center. Any cross-module integration will be added incrementally, tested against isolated environments and designed so the existing applications continue working independently.
+- Design a platform around real workflows instead of isolated CRUD screens.
+- Balance product unification with operational safety.
+- Treat authentication boundaries and privacy as part of product design.
+- Use staged migration to deliver value without disrupting active systems.

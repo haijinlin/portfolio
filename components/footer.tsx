@@ -5,8 +5,8 @@ const quickLinks = [
 ];
 
 const socials = [
-  { href: "https://github.com", label: "GitHub" },
-  { href: "https://linkedin.com", label: "LinkedIn" }
+  { href: "https://github.com/haijinlin", label: "GitHub" },
+  { href: "https://www.linkedin.com/in/haydenlin", label: "LinkedIn" }
 ];
 
 export function Footer() {
@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="border-t border-border/60 bg-background/60">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
         <div className="space-y-1">
-          <p className="text-foreground">Open to web/front-end and marketing tech roles</p>
+          <p className="text-foreground">Open to web, front-end, digital operations and IT-focused roles</p>
           <p>Melbourne, VIC</p>
           <a
             href="mailto:contact@haydenlin.com.au"
