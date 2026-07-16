@@ -1,0 +1,39 @@
+---
+title: "RemindFlow"
+summary: "A focused life-admin system for bills, subscriptions, appointments, deals and follow-up reminders."
+tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Resend"]
+date: "2026-07-03"
+category: "lifehub-module"
+role: "Product Designer & Full Stack Developer"
+access: "private"
+---
+
+## Problem
+
+Life-admin tasks have different deadlines and lead times. A bill may need attention on its due date, while a subscription cancellation or appointment needs an earlier warning. Generic to-do lists did not provide enough structure.
+
+## Solution
+
+RemindFlow organises reminders by real-life category and supports per-item notification timing, due dates, recurrence context and linked source records.
+
+## Key features
+
+- Bills, subscriptions, appointments, calls, emails, deals and general reminders
+- Today, overdue, this week and upcoming views
+- Configurable reminder lead times
+- Daily email summaries through a protected scheduled endpoint
+- Source app and linked-entity fields for future LifeHub integration
+- Password-protected private interface
+- Installable mobile web app
+
+## Technical decisions
+
+The app remains operationally independent from other LifeHub modules. Its integration-ready data model can reference external records without merging databases, reducing coupling and migration risk.
+
+## Privacy
+
+The public portfolio does not connect to the production reminder database or email service. Screenshots use synthetic dates, contacts and financial information.
+
+## What I learned
+
+I developed a clearer understanding of scheduled jobs, email delivery safeguards, time-zone-aware reminders and designing a data model that supports future integration without premature consolidation.

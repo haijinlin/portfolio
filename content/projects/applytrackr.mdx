@@ -1,0 +1,39 @@
+---
+title: "ApplyTrackr"
+summary: "A full-stack job application pipeline with structured tracking, follow-ups and resume performance insights."
+tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Data Modelling"]
+date: "2026-06-16"
+category: "lifehub-module"
+role: "Product Designer & Full Stack Developer"
+access: "private"
+---
+
+## Problem
+
+Job applications quickly become difficult to manage across job boards, emails and documents. Follow-ups, closing dates and the resume version used for each role can easily be lost.
+
+## Solution
+
+ApplyTrackr turns the application process into a visible pipeline with structured records, upcoming actions and performance reporting.
+
+## Key features
+
+- Full application CRUD and pipeline statuses
+- Quick Add from pasted job descriptions
+- Local rule-based extraction for company, role, salary, skills and closing dates
+- Follow-up dashboard and filtering
+- Resume version and cover-letter snapshot management
+- Performance reporting by resume and career category
+- Responsive desktop and mobile interface
+
+## Technical decisions
+
+The parser intentionally runs locally using TypeScript rules rather than sending job descriptions to an AI service. Low-confidence fields remain blank so the user can verify them instead of accepting unreliable generated data.
+
+## Privacy
+
+Application records can contain personal career information. A future demo will use a separate seeded database with fictional employers and roles.
+
+## What I learned
+
+I improved my skills in information extraction, confidence-aware UX, relational modelling and designing analytics around a practical personal workflow.

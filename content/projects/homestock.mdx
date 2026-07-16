@@ -1,0 +1,38 @@
+---
+title: "HomeStock"
+summary: "A responsive household inventory and shopping system with low-stock visibility and controlled editing."
+tags: ["Next.js", "Auth.js", "Prisma", "Neon", "Vercel Blob"]
+date: "2026-06-08"
+category: "lifehub-module"
+role: "Product Designer & Full Stack Developer"
+access: "private"
+---
+
+## Problem
+
+It was difficult to remember which household supplies were available, what was running low and what needed to be purchased, especially when information was shared across devices.
+
+## Solution
+
+HomeStock provides a searchable household inventory with clear quantities, categories, low-stock indicators and optional product images.
+
+## Key features
+
+- Inventory dashboard and low-stock summary
+- Add, edit and remove household items
+- Custom categories, search and filtering
+- Product image upload and managed deletion
+- Public read-only architecture with authenticated administrator editing
+- Responsive PWA with an offline fallback
+
+## Technical decisions
+
+All write operations validate administrator access on the server. Neon PostgreSQL stores structured inventory records while Vercel Blob stores images, keeping database queries compact. Local SQLite and production PostgreSQL schemas support safe development without using production data.
+
+## Privacy
+
+Household inventory can reveal purchasing habits and valuable possessions. The portfolio version will use an isolated sample inventory rather than the live household dataset.
+
+## What I learned
+
+This project developed my experience with storage lifecycle management, Auth.js permissions, environment-specific Prisma schemas and designing useful read-only experiences.

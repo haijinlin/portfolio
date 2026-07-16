@@ -1,0 +1,40 @@
+---
+title: "CoCare"
+summary: "A calendar-first co-parenting application for care schedules, structured change requests, expenses and auditable history."
+tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "NextAuth"]
+date: "2026-07-01"
+category: "lifehub-module"
+role: "Product Designer & Full Stack Developer"
+access: "private"
+---
+
+## Problem
+
+Managing a shared parenting schedule through messages and personal calendars made changes difficult to track. Important context could be lost, and there was no reliable history of requests, responses or updated arrangements.
+
+## Solution
+
+I designed CoCare as a calendar-first workflow. It keeps the care schedule visible while turning informal schedule discussions into structured requests with clear statuses and an audit trail.
+
+## Key features
+
+- Month and week calendar views
+- Court-order and holiday schedule rules
+- Structured change requests with accept, decline, cancel and history states
+- Make-up care balances and child-related expense tracking
+- CSV and calendar exports
+- Google authentication with server-side account allow-listing
+- Email notifications and private document storage
+- Responsive, installable mobile web experience
+
+## Technical decisions
+
+The application uses Prisma and PostgreSQL for relational schedule data, NextAuth for Google login, Zod for validation and server-side permission checks for every protected workflow. Schedule changes preserve history rather than overwriting the original event.
+
+## Privacy
+
+CoCare is private by design because it handles family scheduling and potentially sensitive records. The portfolio uses representative descriptions and will use synthetic screenshots rather than exposing the production application.
+
+## What I learned
+
+This project strengthened my approach to calendar data modelling, role-based workflows, auditability and designing calm interfaces for emotionally sensitive real-world tasks.
