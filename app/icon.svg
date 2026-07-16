@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Hayden Lin">
+  <defs>
+    <linearGradient id="bg" x1="52" y1="30" x2="462" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17234A"/>
+      <stop offset="1" stop-color="#080C1B"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="112" y1="120" x2="407" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7BD4FF"/>
+      <stop offset="1" stop-color="#FF9EC7"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+  <rect x="16" y="16" width="480" height="480" rx="102" fill="none" stroke="#FFFFFF" stroke-opacity=".08" stroke-width="2"/>
+  <g fill="none" stroke="url(#accent)" stroke-width="42" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <path d="M123 147v218M123 256h125M248 147v218"/>
+    <path d="M309 147v218h91"/>
+  </g>
+  <circle cx="407" cy="132" r="13" fill="#FF9EC7"/>
+</svg>
