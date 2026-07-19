@@ -1,138 +1,74 @@
 import { Section } from "@/components/section";
 
 export const metadata = {
-  title: "Freelance Services - Hayden Lin"
+  title: "Freelance Web Services | Hayden Lin",
+  description: "HL Tech Solutions is Hayden Lin's Melbourne freelance practice for WordPress websites, SEO, performance, maintenance and technical support."
 };
 
 const services = [
-  {
-    title: "Web & landing pages",
-    desc: "Design, build, and launch fast, responsive sites in WordPress or React/Next with clean handoff."
-  },
-  {
-    title: "Analytics & tracking",
-    desc: "GA/GSC/Tag Manager setup, events, and dashboards so you know what’s working."
-  },
-  {
-    title: "SEO & performance",
-    desc: "Technical checks, metadata, site speed fixes, and content hygiene to rank and convert."
-  },
-  {
-    title: "Ads & marketing ops",
-    desc: "Google Ads and social campaigns, tagging, and reporting with clear attribution."
-  },
-  {
-    title: "Ongoing support",
-    desc: "Updates, A/B tweaks, uptime/perf monitoring, and light IT help for small teams."
-  }
+  { title: "Website development", desc: "Clean, responsive WordPress websites, online stores and lightweight web solutions designed for small-business needs." },
+  { title: "SEO & performance", desc: "Technical SEO, Core Web Vitals, image optimisation and practical improvements that help websites load faster and remain discoverable." },
+  { title: "Website maintenance", desc: "Updates, backups, security checks, uptime monitoring and ongoing improvements that keep business websites reliable." },
+  { title: "Technical support & consultation", desc: "Help with plugin conflicts, hosting, DNS, migrations, troubleshooting and planning the next stage of a digital setup." },
+];
+
+const projects = [
+  { title: "Verduscape", type: "Website development", desc: "A fast, modern WordPress website designed to showcase landscaping services and drive enquiries.", href: "https://hltech.com.au/projects/verduscape/" },
+  { title: "Vic City Plumbing", type: "Recovery & optimisation", desc: "A security recovery and performance optimisation project for a compromised WordPress website.", href: "https://hltech.com.au/projects/vic-city-plumbing/" },
+  { title: "JKW Construct", type: "WordPress development", desc: "A structured construction-company website with custom project showcases and a clear service journey.", href: "https://hltech.com.au/projects/jkw-construct/" },
 ];
 
 const process = [
-  { title: "Discover", desc: "Goals, audience, and quick audit of current site/stack." },
-  { title: "Plan", desc: "Scope, timeline, and success metrics with a lean backlog." },
-  { title: "Build", desc: "Implement, test, and track—ship iteratively." },
-  { title: "Optimize", desc: "Tune SEO/ads, performance, and content based on data." }
-];
-
-const stack = [
-  "Next.js/React",
-  "WordPress/PHP",
-  "Tailwind/Bootstrap",
-  "Google Ads",
-  "GA/GSC/Tag Manager",
-  "Mailchimp/Email",
-  "SEO Audits",
-  "Performance"
+  ["Understand", "Discuss the business, audience, current website and the outcome that matters."],
+  ["Plan", "Agree on a practical scope, priorities, timeline and responsibilities."],
+  ["Deliver", "Build or improve the website, test it carefully and communicate progress clearly."],
+  ["Support", "Provide handover, maintenance and ongoing help where it adds value."],
 ];
 
 export default function FreelancePage() {
-  return (
-    <div className="space-y-12">
-      <section className="relative overflow-hidden border-b border-border/60 bg-gradient-to-br from-background via-background to-background/80 py-16">
-        <div className="pointer-events-none absolute inset-0 opacity-70">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(123,212,255,0.12),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(255,158,199,0.12),transparent_40%)] blur-3xl" />
-        </div>
-        <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-5 md:flex-row md:items-center md:justify-between">
-          <div className="space-y-6">
-            <p className="text-xs uppercase tracking-[0.32em] text-muted-foreground">Freelance · Web & Marketing Tech</p>
-            <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-              Websites that launch fast, measure well, and keep improving.
-            </h1>
-            <p className="max-w-2xl text-lg text-muted-foreground">
-              I build and maintain sites, connect analytics and ads, and handle ongoing support. Based in Melbourne, available for remote or hybrid work.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="https://haydenlin.com.au"
-                className="rounded-full bg-foreground px-5 py-2 text-background transition hover:-translate-y-0.5 hover:shadow-glow"
-              >
-                View haydenlin.com.au
-              </a>
-              <a
-                href="mailto:contact@haydenlin.com.au?subject=Freelance%20inquiry"
-                className="rounded-full border border-border px-5 py-2 transition hover:-translate-y-0.5 hover:border-foreground"
-              >
-                Email about a project
-              </a>
-            </div>
-          </div>
-          <div className="w-full max-w-md rounded-2xl border border-border bg-card/60 p-5 shadow-sm backdrop-blur">
-            <div className="aspect-video w-full rounded-xl bg-gradient-to-br from-accent/15 via-card to-accent-2/15" />
-            <p className="mt-3 text-sm text-muted-foreground">Placeholder for a hero/portfolio image or service graphic.</p>
+  return <div className="space-y-12">
+    <section className="relative overflow-hidden border-b border-border/60 py-16 sm:py-20">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(123,212,255,0.1),transparent_36%),radial-gradient(circle_at_82%_10%,rgba(255,194,148,0.09),transparent_38%)]" />
+      <div className="relative mx-auto grid max-w-6xl gap-8 px-5 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+        <div>
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">My freelance practice</p>
+          <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">HL Tech Solutions</h1>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">I help Melbourne and remote small businesses build, improve and maintain websites that are fast, clear and dependable.</p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <a href="https://hltech.com.au/" target="_blank" rel="noreferrer" className="rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background">Visit HL Tech Solutions ↗</a>
+            <a href="https://hltech.com.au/contact/" target="_blank" rel="noreferrer" className="rounded-full border border-border px-5 py-2.5 text-sm font-medium">Request a free consultation ↗</a>
           </div>
         </div>
-      </section>
+        <aside className="rounded-3xl border border-border bg-card/70 p-7 shadow-sm backdrop-blur">
+          <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">What clients can expect</p>
+          <ul className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
+            <li><strong className="text-foreground">Practical advice.</strong> Recommendations shaped around the business rather than unnecessary complexity.</li>
+            <li><strong className="text-foreground">Clear communication.</strong> Straightforward explanations, agreed scope and visible progress.</li>
+            <li><strong className="text-foreground">Support after launch.</strong> Maintenance and troubleshooting when the website needs continued care.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
 
-      <Section title="Services" eyebrow="What I deliver">
-        <div className="grid gap-4 md:grid-cols-2">
-          {services.map((service) => (
-            <div key={service.title} className="rounded-2xl border border-border bg-card/60 p-5 shadow-sm backdrop-blur">
-              <h3 className="text-lg font-semibold">{service.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{service.desc}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
+    <Section title="Core services" eyebrow="What HL Tech Solutions provides">
+      <div className="grid gap-4 md:grid-cols-2">{services.map((service) => <article key={service.title} className="rounded-2xl border border-border bg-card/60 p-5"><h3 className="text-lg font-semibold">{service.title}</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{service.desc}</p></article>)}</div>
+    </Section>
 
-      <Section title="Process" eyebrow="How we’ll work">
-        <div className="grid gap-4 md:grid-cols-4">
-          {process.map((step, idx) => (
-            <div key={step.title} className="rounded-2xl border border-border bg-card/60 p-5">
-              <div className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Step {idx + 1}</div>
-              <h4 className="mt-2 text-base font-semibold">{step.title}</h4>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
+    <Section title="Selected client work" eyebrow="Real freelance projects">
+      <div className="grid gap-5 md:grid-cols-3">{projects.map((project) => <article key={project.title} className="flex flex-col rounded-2xl border border-border bg-card/60 p-5"><p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{project.type}</p><h3 className="mt-2 text-xl font-semibold">{project.title}</h3><p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{project.desc}</p><a href={project.href} target="_blank" rel="noreferrer" className="mt-5 text-sm font-medium underline decoration-transparent underline-offset-4 hover:decoration-current">View project on HL Tech ↗</a></article>)}</div>
+      <a href="https://hltech.com.au/projects/" target="_blank" rel="noreferrer" className="mt-6 inline-flex rounded-full border border-border px-4 py-2 text-sm font-medium">View all client projects ↗</a>
+    </Section>
 
-      <Section title="Toolkit" eyebrow="Tech I use">
-        <div className="flex flex-wrap gap-2">
-          {stack.map((item) => (
-            <span key={item} className="rounded-full border border-border px-3 py-1 text-sm text-foreground/90">
-              {item}
-            </span>
-          ))}
-        </div>
-      </Section>
+    <Section title="How I work" eyebrow="A simple, accountable process">
+      <div className="grid gap-4 md:grid-cols-4">{process.map(([title, desc], index) => <article key={title} className="rounded-2xl border border-border bg-card/60 p-5"><p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Step {index + 1}</p><h3 className="mt-2 font-semibold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p></article>)}</div>
+    </Section>
 
-      <Section title="Ready to talk?" eyebrow="Next steps">
-        <div className="flex flex-wrap items-center gap-3">
-          <a
-            href="https://haydenlin.com.au"
-            className="rounded-full bg-foreground px-5 py-2 text-background transition hover:-translate-y-0.5 hover:shadow-glow"
-          >
-            Visit haydenlin.com.au
-          </a>
-          <a
-            href="mailto:contact@haydenlin.com.au?subject=Freelance%20inquiry"
-            className="rounded-full border border-border px-5 py-2 transition hover:-translate-y-0.5 hover:border-foreground"
-          >
-            Email Hayden
-          </a>
-          <p className="text-sm text-muted-foreground">Melbourne-based, open to remote/hybrid.</p>
-        </div>
-      </Section>
-    </div>
-  );
+    <Section title="Freelance and portfolio, clearly separated" eyebrow="Two sites, two purposes">
+      <div className="grid gap-4 md:grid-cols-2"><div className="rounded-2xl border border-border bg-card/60 p-5"><h3 className="font-semibold">This portfolio</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">Shows my background, personal product work, technical interests and employment experience.</p></div><div className="rounded-2xl border border-border bg-card/60 p-5"><h3 className="font-semibold">HL Tech Solutions</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">Contains complete service information, client case studies, testimonials and the enquiry process.</p></div></div>
+    </Section>
+
+    <Section title="Have a website project in mind?" eyebrow="Melbourne and remote clients">
+      <div className="rounded-2xl border border-border bg-card/70 p-6 sm:flex sm:items-center sm:justify-between"><div><h3 className="text-xl font-semibold">Start with a free consultation.</h3><p className="mt-2 text-sm text-muted-foreground">Tell me what is working, what is not, and what you want the website to achieve.</p></div><a href="https://hltech.com.au/contact/" target="_blank" rel="noreferrer" className="mt-5 inline-flex rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background sm:mt-0">Contact HL Tech Solutions ↗</a></div>
+    </Section>
+  </div>;
 }
