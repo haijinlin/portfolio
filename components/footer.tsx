@@ -1,7 +1,8 @@
 const quickLinks = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
-  { href: "/freelance", label: "Freelance" }
+  { href: "/freelance", label: "Freelance" },
+  { href: "/hayden-lin-resume.pdf", label: "Resume" }
 ];
 
 const socials = [

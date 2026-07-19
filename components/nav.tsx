@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
   { href: "/freelance", label: "Freelance" },
+  { href: "/hayden-lin-resume.pdf", label: "Resume" },
   { href: "mailto:contact@haydenlin.com.au", label: "Contact" }
 ];
 

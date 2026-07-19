@@ -17,6 +17,7 @@ export function Hero() {
             <a href="/projects/lifehub" className="rounded-full bg-foreground px-5 py-2.5 text-background transition hover:-translate-y-0.5 hover:shadow-glow">Explore LifeHub</a>
             <a href="/projects" className="rounded-full border border-border px-5 py-2.5 transition hover:-translate-y-0.5 hover:border-foreground">View all projects</a>
             <a href="mailto:contact@haydenlin.com.au" className="rounded-full border border-border px-5 py-2.5 transition hover:-translate-y-0.5 hover:border-foreground">Email Hayden</a>
+            <a href="/hayden-lin-resume.pdf" download className="rounded-full border border-border px-5 py-2.5 transition hover:-translate-y-0.5 hover:border-foreground">Download resume</a>
           </div>
         </motion.div>
       </div>
