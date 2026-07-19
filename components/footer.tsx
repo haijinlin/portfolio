@@ -7,7 +7,7 @@ const quickLinks = [
 
 const socials = [
   { href: "https://github.com/haijinlin", label: "GitHub" },
-  { href: "https://www.linkedin.com/in/haydenlin", label: "LinkedIn" }
+  { href: "https://www.linkedin.com/in/hayden-lin-b73b79ba", label: "LinkedIn" }
 ];
 
 export function Footer() {

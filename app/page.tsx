@@ -72,7 +72,7 @@ export default function HomePage() {
     </Section>
 
     <Section title="Contact" eyebrow="Let’s talk">
-      <div className="rounded-2xl border border-border bg-card/70 p-6 md:flex md:items-center md:justify-between"><div><h3 className="text-xl font-semibold">Open to web, front-end, digital operations and IT-focused opportunities.</h3><p className="mt-2 text-sm text-muted-foreground">Melbourne, VIC · Permanent Resident</p></div><div className="mt-5 flex gap-3 md:mt-0"><a href="mailto:contact@haydenlin.com.au?subject=Opportunity%20for%20Hayden" className="rounded-full bg-foreground px-5 py-2.5 text-sm text-background">Email Hayden</a><a href="https://www.linkedin.com/in/haydenlin" target="_blank" rel="noreferrer" className="rounded-full border border-border px-5 py-2.5 text-sm">LinkedIn</a></div></div>
+      <div className="rounded-2xl border border-border bg-card/70 p-6 md:flex md:items-center md:justify-between"><div><h3 className="text-xl font-semibold">Open to web, front-end, digital operations and IT-focused opportunities.</h3><p className="mt-2 text-sm text-muted-foreground">Melbourne, VIC · Permanent Resident</p></div><div className="mt-5 flex gap-3 md:mt-0"><a href="mailto:contact@haydenlin.com.au?subject=Opportunity%20for%20Hayden" className="rounded-full bg-foreground px-5 py-2.5 text-sm text-background">Email Hayden</a><a href="https://www.linkedin.com/in/hayden-lin-b73b79ba" target="_blank" rel="noreferrer" className="rounded-full border border-border px-5 py-2.5 text-sm">LinkedIn</a></div></div>
     </Section>
   </>;
 }
