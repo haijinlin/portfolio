@@ -1,0 +1,57 @@
+---
+title: "GiftPocket"
+summary: "A local-first encrypted wallet for organising gift cards, balances, expiry dates and purchase history."
+tags: ["React", "TypeScript", "Web Crypto API", "Supabase", "PWA"]
+date: "2026-07-23"
+category: "lifehub-module"
+role: "Product Designer & AI-Assisted Builder"
+access: "private"
+image: "/projects/giftpocket.png"
+gallery:
+  - src: "/projects/screenshots/giftpocket-wallet.png"
+    alt: "GiftPocket synthetic read-only wallet showing fictional gift cards and balances"
+    label: "Encrypted wallet"
+  - src: "/projects/screenshots/giftpocket-brands.png"
+    alt: "GiftPocket synthetic brand library using fictional merchant details"
+    label: "Brand library"
+  - src: "/projects/screenshots/giftpocket-activity.png"
+    alt: "GiftPocket mobile activity view with fictional purchase history"
+    label: "Mobile activity"
+    fit: "contain"
+---
+
+## Problem
+
+Gift cards are easy to forget, especially when their numbers, balances, expiry dates and purchase history are spread across emails, physical cards and notes. Storing those details in an ordinary unencrypted list would create a new security risk.
+
+## Solution
+
+GiftPocket brings gift cards into one installable wallet. It tracks reusable brand details, masked card numbers, optional PINs, balances, expiry dates and transactions while keeping the vault encrypted.
+
+## Key features
+
+- Encrypted local vault protected by a master password
+- Gift card balances, expiry dates and usage history
+- Reusable brand library and category filtering
+- Expiring-soon and activity views
+- Encrypted backup and restore
+- Optional encrypted account sync
+- Responsive, installable PWA experience
+
+## Privacy-first architecture
+
+Vault data is encrypted with AES-256-GCM. The key is derived in the browser from the master password using PBKDF2-SHA-256 with 310,000 iterations, a random salt and unique IVs. The master password is not stored. Optional cloud sync stores an encrypted payload rather than readable card data.
+
+The portfolio never opens the real vault. These gallery images were generated from a localhost-only, read-only screenshot mode containing fictional brands, card numbers and transactions.
+
+## Security boundaries
+
+GiftPocket has not received an independent security audit. Decrypted information exists in browser memory while the vault is unlocked, a compromised device or browser extension may still expose it, and a forgotten master password cannot be recovered. These limits are stated clearly rather than presenting encryption as a guarantee of complete safety.
+
+## My contribution
+
+I defined the real workflow, product structure, interface decisions, privacy requirements and expected security boundaries. I used AI-assisted development to implement and refine the application, then tested the important user flows and deployment behaviour.
+
+## What I learned
+
+This project deepened my understanding of browser encryption, key derivation, local-first product design, encrypted sync trade-offs and the importance of communicating security limitations honestly.

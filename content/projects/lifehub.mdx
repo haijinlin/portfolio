@@ -10,20 +10,20 @@ access: "private"
 image: "/projects/lifehub.svg"
 gallery:
   - src: "/projects/screenshots/lifehub-dashboard.png"
-    alt: "LifeHub private dashboard showing the unified platform home and six module cards"
+    alt: "LifeHub private dashboard showing the unified platform home and seven module cards"
     label: "Private dashboard"
-  - src: "/projects/screenshots/lifehub-modules.jpg"
-    alt: "LifeHub module overview grouping six applications into family, life admin and personal growth"
-    label: "Six modules"
+  - src: "/projects/screenshots/lifehub-modules.png"
+    alt: "LifeHub module overview grouping seven applications into family, life admin and personal growth"
+    label: "Seven modules"
   - src: "/projects/screenshots/lifehub-mobile.png"
-    alt: "LifeHub responsive mobile dashboard with all six modules"
+    alt: "LifeHub responsive mobile dashboard with all seven modules"
     label: "Mobile experience"
     fit: "contain"
 ---
 
 ## Overview
 
-LifeHub is a personal and family management platform I designed around real everyday workflows. It brings six independent applications into one consistent experience while deliberately keeping sensitive data and production systems isolated.
+LifeHub is a personal and family management platform I designed around real everyday workflows. It brings seven independent applications into one consistent experience while deliberately keeping sensitive data and production systems isolated.
 
 The first release is a secure launchpad rather than a risky rewrite. Each module remains independently deployable, retains its own database and access controls, and can still be opened directly if LifeHub is unavailable.
 
@@ -33,7 +33,7 @@ Important information was spread across messages, calendars, notes and separate 
 
 ## The solution
 
-I created a private, installable dashboard with a consistent navigation system and six purpose-built modules:
+I created a private, installable dashboard with a consistent navigation system and seven purpose-built modules:
 
 - **CoCare** — shared parenting schedules, change requests and care coordination.
 - **RemindFlow** — bills, subscriptions, appointments and follow-up reminders.
@@ -41,10 +41,11 @@ I created a private, installable dashboard with a consistent navigation system a
 - **ApplyTrackr** — job applications, interviews and follow-up actions.
 - **Workout** — training, nutrition, calendars and progress tracking.
 - **WishTree** — family wishes, goals and shared moments.
+- **GiftPocket** — encrypted gift cards, balances, expiry dates and purchase activity.
 
 ## Architecture decision
 
-Instead of immediately merging six codebases and databases, LifeHub uses progressive integration:
+Instead of immediately merging seven codebases and databases, LifeHub uses progressive integration:
 
 1. A unified private entry point with independent module links.
 2. A shared visual language across modules.
