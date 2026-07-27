@@ -16,10 +16,10 @@ const additionalExperience = [
 ];
 
 const skills = [
-  ["Development", ["Next.js", "React", "TypeScript", "JavaScript", "Prisma", "PostgreSQL", "Tailwind CSS", "Git/GitHub"]],
+  ["Project technologies", ["React", "Next.js", "TypeScript", "JavaScript", "Prisma", "PostgreSQL", "Node.js", "Tailwind CSS", "Git/GitHub"]],
   ["Web & commerce", ["WordPress", "PHP", "WooCommerce", "Shopify", "BigCommerce", "HTML", "CSS"]],
+  ["IT & operations", ["Microsoft 365", "Windows & macOS", "Networking", "Hardware support", "Inventory", "Receiving & dispatch", "User training"]],
   ["Analytics & marketing", ["Google Analytics", "Search Console", "Google Ads", "Tag Manager", "Semrush", "SEO audits", "Mailchimp"]],
-  ["IT & systems", ["Microsoft 365", "Windows & macOS", "Networking", "Hardware support", "Vercel", "Jira", "User training"]],
 ] as const;
 
 export default function HomePage() {
@@ -72,7 +72,7 @@ export default function HomePage() {
     </Section>
 
     <Section title="Contact" eyebrow="Let’s talk">
-      <div className="rounded-2xl border border-border bg-card/70 p-6 md:flex md:items-center md:justify-between"><div><h3 className="text-xl font-semibold">Open to web, front-end, digital operations and IT-focused opportunities.</h3><p className="mt-2 text-sm text-muted-foreground">Melbourne, VIC · Permanent Resident</p></div><div className="mt-5 flex gap-3 md:mt-0"><a href="mailto:contact@haydenlin.com.au?subject=Opportunity%20for%20Hayden" className="rounded-full bg-foreground px-5 py-2.5 text-sm text-background">Email Hayden</a><a href="https://www.linkedin.com/in/hayden-lin-b73b79ba" target="_blank" rel="noreferrer" className="rounded-full border border-border px-5 py-2.5 text-sm">LinkedIn</a></div></div>
+      <div className="rounded-2xl border border-border bg-card/70 p-6 md:flex md:items-center md:justify-between"><div><h3 className="text-xl font-semibold">Open to IT support, operations, digital solutions and web-focused opportunities.</h3><p className="mt-2 text-sm text-muted-foreground">Melbourne, VIC · Permanent Resident</p><div className="mt-4 flex flex-wrap gap-2">{["Full-time", "Contract", "Freelance", "Remote", "On-site"].map((item) => <span key={item} className="rounded-full border border-border bg-background/50 px-3 py-1 text-xs text-muted-foreground">{item}</span>)}</div></div><div className="mt-5 flex gap-3 md:mt-0"><a href="mailto:contact@haydenlin.com.au?subject=Opportunity%20for%20Hayden" className="rounded-full bg-foreground px-5 py-2.5 text-sm text-background">Email Hayden</a><a href="https://www.linkedin.com/in/hayden-lin-b73b79ba" target="_blank" rel="noreferrer" className="rounded-full border border-border px-5 py-2.5 text-sm">LinkedIn</a></div></div>
     </Section>
   </>;
 }

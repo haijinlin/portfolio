@@ -21,15 +21,19 @@ export function ProjectCard({ project }: { project: Project }) {
           <div className="aspect-video w-full bg-[radial-gradient(circle_at_30%_30%,rgba(123,212,255,0.15),transparent_40%),radial-gradient(circle_at_70%_20%,rgba(255,158,199,0.15),transparent_45%)]" />
         )}
       </div>
-      <div className="flex items-start justify-between gap-4">
+      <div>
         <div className="space-y-1">
           <h3 className="text-xl font-semibold">{project.title}</h3>
           <p className="text-sm text-muted-foreground">{project.summary}</p>
         </div>
         {project.tags && (
-          <span className="text-xs uppercase tracking-wide text-muted-foreground text-right">
-            {project.tags.join(" · ")}
-          </span>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {project.tags.slice(0, 6).map((tag) => (
+              <span key={tag} className="rounded-full border border-border bg-background/50 px-2.5 py-1 text-[11px] text-muted-foreground">
+                {tag}
+              </span>
+            ))}
+          </div>
         )}
       </div>
       {project.impact && <p className="mt-3 text-sm text-muted-foreground">{project.impact}</p>}

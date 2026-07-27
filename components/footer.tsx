@@ -15,7 +15,7 @@ export function Footer() {
     <footer className="border-t border-border/60 bg-background/60">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
         <div className="space-y-1">
-          <p className="text-foreground">Open to web, front-end, digital operations and IT-focused roles</p>
+          <p className="text-foreground">Open to IT support, operations, digital solutions and web-focused roles</p>
           <p>Melbourne, VIC</p>
           <a
             href="mailto:contact@haydenlin.com.au"
@@ -23,6 +23,7 @@ export function Footer() {
           >
             contact@haydenlin.com.au
           </a>
+          <p className="pt-2 text-xs">© 2026 Hayden Lin</p>
         </div>
 
         <div className="flex flex-col gap-3 text-sm text-muted-foreground md:items-end">

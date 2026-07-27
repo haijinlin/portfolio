@@ -8,8 +8,8 @@ import { Providers } from "@/components/providers";
 
 export const metadata: Metadata = {
   title: "Hayden Lin - Portfolio",
-  description: "Product-minded engineer building thoughtful, fast-shipping experiences.",
-  metadataBase: new URL("https://example.com")
+  description: "IT support, operations and digital solutions professional transforming real-world workflows into practical web applications.",
+  metadataBase: new URL("https://www.haydenlin.com.au")
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

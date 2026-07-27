@@ -10,14 +10,14 @@ export function Hero() {
       </div>
       <div className="relative mx-auto max-w-6xl px-5">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }} className="max-w-4xl space-y-6">
-          <p className="text-xs uppercase tracking-[0.32em] text-muted-foreground">Full Stack Developer · Product Builder · Digital Operations</p>
-          <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">I turn real-life workflows into useful, reliable web products.</h1>
-          <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground">Melbourne-based developer with experience across product design, full-stack delivery, digital marketing systems and IT support. My featured platform, LifeHub, brings seven independently deployed applications into one privacy-conscious ecosystem.</p>
+          <p className="text-xs uppercase tracking-[0.32em] text-muted-foreground">IT Support · Operations · Digital Solutions</p>
+          <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">From warehouse operations to family management, I build practical software for everyday problems.</h1>
+          <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground">Melbourne-based digital solutions professional with experience across operations, IT support, web delivery and digital marketing. I turn manual workflows into clear, useful applications through practical product thinking and AI-assisted development.</p>
           <div className="flex flex-wrap gap-3">
-            <a href="/projects/lifehub" className="rounded-full bg-foreground px-5 py-2.5 text-background transition hover:-translate-y-0.5 hover:shadow-glow">Explore LifeHub</a>
-            <a href="/projects" className="rounded-full border border-border px-5 py-2.5 transition hover:-translate-y-0.5 hover:border-foreground">View all projects</a>
-            <a href="mailto:contact@haydenlin.com.au" className="rounded-full border border-border px-5 py-2.5 transition hover:-translate-y-0.5 hover:border-foreground">Email Hayden</a>
+            <a href="/projects" className="rounded-full bg-foreground px-5 py-2.5 text-background transition hover:-translate-y-0.5 hover:shadow-glow">View projects</a>
             <a href="/hayden-lin-resume.pdf" download className="rounded-full border border-border px-5 py-2.5 transition hover:-translate-y-0.5 hover:border-foreground">Download resume</a>
+            <a href="mailto:contact@haydenlin.com.au" className="rounded-full border border-border px-5 py-2.5 transition hover:-translate-y-0.5 hover:border-foreground">Email</a>
+            <a href="https://github.com/haijinlin" target="_blank" rel="noreferrer" className="rounded-full border border-border px-5 py-2.5 transition hover:-translate-y-0.5 hover:border-foreground">GitHub</a>
           </div>
         </motion.div>
       </div>
