@@ -24,6 +24,7 @@ export function Footer() {
             >
               contact@haydenlin.com.au
             </a>
+            <p className="pt-2 text-xs">© 2026 Hayden Lin</p>
           </div>
 
           <div className="flex flex-col gap-3 text-sm text-muted-foreground md:items-end">
@@ -43,7 +44,6 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <p className="mt-8 border-t border-border/60 pt-5 text-center text-xs">© 2026 Hayden Lin</p>
       </div>
     </footer>
   );
