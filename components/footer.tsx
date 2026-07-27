@@ -13,35 +13,37 @@ const socials = [
 export function Footer() {
   return (
     <footer className="border-t border-border/60 bg-background/60">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
-        <div className="space-y-1">
-          <p className="text-foreground">Open to IT support, operations, digital solutions and web-focused roles</p>
-          <p>Melbourne, VIC</p>
-          <a
-            href="mailto:contact@haydenlin.com.au"
-            className="inline-flex w-fit font-medium text-muted-foreground transition hover:text-foreground"
-          >
-            contact@haydenlin.com.au
-          </a>
-          <p className="pt-2 text-xs">© 2026 Hayden Lin</p>
-        </div>
+      <div className="mx-auto max-w-6xl px-5 py-10 text-sm text-muted-foreground">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="space-y-1">
+            <p className="text-foreground">Open to IT support, operations, digital solutions and web-focused roles</p>
+            <p>Melbourne, VIC</p>
+            <a
+              href="mailto:contact@haydenlin.com.au"
+              className="inline-flex w-fit font-medium text-muted-foreground transition hover:text-foreground"
+            >
+              contact@haydenlin.com.au
+            </a>
+          </div>
 
-        <div className="flex flex-col gap-3 text-sm text-muted-foreground md:items-end">
-          <div className="flex flex-wrap gap-4">
-            {quickLinks.map((link) => (
-              <a key={link.href} href={link.href} className="hover:text-foreground">
-                {link.label}
-              </a>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-4">
-            {socials.map((link) => (
-              <a key={link.href} href={link.href} className="hover:text-foreground" target="_blank" rel="noreferrer">
-                {link.label}
-              </a>
-            ))}
+          <div className="flex flex-col gap-3 text-sm text-muted-foreground md:items-end">
+            <div className="flex flex-wrap gap-4">
+              {quickLinks.map((link) => (
+                <a key={link.href} href={link.href} className="hover:text-foreground">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-4">
+              {socials.map((link) => (
+                <a key={link.href} href={link.href} className="hover:text-foreground" target="_blank" rel="noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
+        <p className="mt-8 border-t border-border/60 pt-5 text-center text-xs">© 2026 Hayden Lin</p>
       </div>
     </footer>
   );
