@@ -1,0 +1,94 @@
+---
+title: "Construction Project Management — Workflow Platform"
+summary: "A role-based coordination platform for a Melbourne building and renovation company, connecting internal staff, clients and manufacturers from drawings and payments through production, installation and handover."
+tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Role-based Access", "Workflow Automation", "PWA", "Resend"]
+date: "2026-08-05"
+category: "commercial"
+role: "Product Designer & Full Stack Developer"
+access: "private"
+image: "/projects/construction-workflow.png"
+impact: "Turns a complex, exception-heavy building process into one auditable source of truth."
+gallery:
+  - src: "/projects/screenshots/construction-project-workflow.png"
+    alt: "Synthetic construction project showing a blocked payment, four workflow phases and role-specific project information"
+    label: "Admin workflow"
+  - src: "/projects/screenshots/construction-client-view.png"
+    alt: "Synthetic client view of the same project with organisation-specific people, files and activity"
+    label: "Role-isolated client view"
+  - src: "/projects/screenshots/construction-project-mobile.png"
+    alt: "Responsive mobile view of the synthetic construction project workflow"
+    label: "Mobile experience"
+    fit: "contain"
+---
+
+## Overview
+
+This is a private business application I designed and built for a Melbourne-based building and renovation company. It coordinates projects across internal staff, clients and manufacturers while preserving the very different responsibilities and information boundaries of each party. The company name has been withheld while the case study is awaiting publication approval.
+
+The product turns a long, exception-heavy process into a visible workflow: drawings, approvals, payment checkpoints, site measurement, production, shipment, delivery, installation and client acceptance all live in one auditable project record.
+
+The screenshots in this case study use entirely synthetic people, addresses, files and project activity.
+
+## The operational problem
+
+Building projects involve decisions and dependencies that are difficult to follow across email, messages and disconnected files. A project may be waiting for a payment, a revised drawing, an internal approval or action by an external organisation, yet those blockers are easy to miss.
+
+Privacy adds another constraint. The internal project team needs complete visibility as the coordinator, but a client and manufacturer must not see each other's organisation details, private submissions or internal activity. Sharing a file also has to be a deliberate action rather than an accidental side effect of uploading it.
+
+## Product model
+
+I consolidated the workflow into four expandable phases:
+
+1. **Design & Drawings** — deposits, preliminary drawings, measurements, work drawings and final approvals.
+2. **Production** — production payment, manufacturing progress and completion evidence.
+3. **Delivery & Installation** — shipment, balance payment, site delivery and installation.
+4. **Handover & Aftercare** — client acceptance, rectification and project completion.
+
+Each phase contains smaller operational milestones without making the overall project feel like an endless checklist. Red, amber and green states make blockers and partial completion visible at a glance.
+
+## Conditional workflows, not a rigid wizard
+
+Real projects do not always follow one linear path. For example, a preliminary drawing may already exist, or the internal team may need to prepare one after receiving a deposit. Site measurement and payment can also be parallel requirements.
+
+I modelled these as explicit conditions and gates. A stage advances only when its required approvals or confirmed payments are complete, while authorised administrators can move a project forward or backward with a recorded reason when reality does not match the standard path.
+
+## Role-based privacy
+
+- **Internal administrators and staff** coordinate the whole project and control external publication.
+- **Clients** see only their project access, client-facing actions and files released to their organisation.
+- **Manufacturers** see only assigned production responsibilities and files released to them.
+- Client and manufacturer organisations never see one another's people, private uploads, notes or activity.
+- Access is assigned per project, so participation in one project does not reveal another.
+
+This is enforced in server-side data access and action rules, not only by hiding interface elements.
+
+## Drawings, files and approvals
+
+Files retain their source, version, uploader and publication history. A new upload has a two-hour correction window; after that, changing it requires administrator intervention. Internal staff can review externally submitted drawings and publish an approved version to a specific organisation without exposing the source organisation's private workspace.
+
+The same project record supports invoices, payment reports, measurement documents, production evidence and installation files while applying the relevant visibility rules to each category.
+
+## Payments, notifications and accountability
+
+The platform records payment state rather than sensitive dollar values. Clients report unpaid, part-paid or paid-in-full status, and authorised staff confirm what was actually received before a gated stage advances. Invoices can be issued at the relevant payment checkpoint.
+
+Immediate emails notify the party that needs to act, while scheduled reminders handle approaching due dates. Every meaningful action—including administrator overrides—is written to an activity history so the team can understand how the project reached its current state.
+
+## Technical delivery
+
+- Next.js and TypeScript for the responsive web application.
+- Prisma with Neon PostgreSQL for relational project, membership and audit data.
+- Vercel Blob for private project files and versioned uploads.
+- Resend for role-targeted transactional email and scheduled reminders.
+- Installable PWA behaviour for desktop and mobile use.
+- Vercel deployment with production environment controls and scheduled jobs.
+
+## Validation and iteration
+
+I translated the company's existing process into the first working product, then ran role-play testing with the director and staff using separate internal, client and manufacturer accounts. Their feedback reshaped the workflow grouping, parallel milestones, payment terminology, upload rules and approval responsibilities.
+
+This project reinforced that workflow software succeeds by modelling authority, exceptions and accountability—not by adding more forms. The most valuable design work was deciding who can act, what they can see and exactly what must be true before a project moves forward.
+
+## AI-assisted development
+
+AI tools helped accelerate implementation, test repetitive role scenarios and explore interface refinements. I remained responsible for stakeholder discovery, process modelling, product decisions, architecture, privacy rules, validation and the final implementation.

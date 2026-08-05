@@ -6,11 +6,21 @@ import { getProjects } from "@/lib/projects";
 
 export default async function ProjectsPage() {
   const projects = await getProjects();
+  const commercial = projects.filter((project) => project.category === "commercial");
   const platform = projects.find((project) => project.featured);
   const modules = projects.filter((project) => project.category === "lifehub-module");
 
   return <Section title="Projects" eyebrow="Platforms and products">
     <div className="space-y-12">
+      {commercial.length > 0 && <section>
+        <div className="mb-4">
+          <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Commercial work</p>
+          <h2 className="mt-1 text-2xl font-semibold">Built around real business operations</h2>
+          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Products shaped with stakeholders, tested against live workflows and designed for ongoing business use.</p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">{commercial.map((project) => <ProjectCard key={project.slug} project={project} />)}</div>
+      </section>}
+
       {platform && <section>
         <div className="mb-4"><p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Featured platform</p><h2 className="mt-1 text-2xl font-semibold">One connected product vision</h2></div>
         <article className="overflow-hidden rounded-3xl border border-border bg-card/60 shadow-sm lg:grid lg:grid-cols-[1.25fr_0.75fr]">
