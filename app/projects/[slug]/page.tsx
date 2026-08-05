@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getProject, getProjects, getProjectSlugs } from "@/lib/projects";
 import { Section } from "@/components/section";
@@ -9,8 +10,35 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export default async function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = await getProject(params.slug);
+type ProjectPageProps = { params: Promise<{ slug: string }> };
+
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = await getProject(slug);
+  if (!project) return {};
+
+  const title = project.frontmatter.title;
+  const description = project.frontmatter.summary ?? `Read the ${title} case study.`;
+  const image = project.frontmatter.gallery?.[0]?.src ?? project.frontmatter.image ?? "/opengraph-image";
+
+  return {
+    title,
+    description,
+    alternates: { canonical: `/projects/${slug}` },
+    openGraph: {
+      type: "article",
+      url: `/projects/${slug}`,
+      title,
+      description,
+      images: [{ url: image, alt: project.frontmatter.gallery?.[0]?.alt ?? `${title} project` }],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [image] },
+  };
+}
+
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = await getProject(slug);
   if (!project) return notFound();
 
   const projects = await getProjects();
@@ -18,7 +46,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     ...projects.filter((item) => item.featured),
     ...projects.filter((item) => !item.featured),
   ];
-  const currentIndex = ordered.findIndex((item) => item.slug === params.slug);
+  const currentIndex = ordered.findIndex((item) => item.slug === slug);
   const previous = currentIndex > 0 ? ordered[currentIndex - 1] : null;
   const next = currentIndex >= 0 && currentIndex < ordered.length - 1 ? ordered[currentIndex + 1] : null;
 

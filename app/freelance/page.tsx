@@ -1,8 +1,14 @@
 import { Section } from "@/components/section";
 
 export const metadata = {
-  title: "Freelance Web Services | Hayden Lin",
-  description: "HL Tech Solutions is Hayden Lin's Melbourne freelance practice for WordPress websites, SEO, performance, maintenance and technical support."
+  title: "Freelance Web Services",
+  description: "HL Tech Solutions is Hayden Lin's Melbourne freelance practice for WordPress websites, SEO, performance, maintenance and technical support.",
+  alternates: { canonical: "/freelance" },
+  openGraph: {
+    url: "/freelance",
+    title: "Freelance Web Services | Hayden Lin",
+    description: "WordPress development, SEO, performance, maintenance and technical support for Melbourne and remote small businesses.",
+  },
 };
 
 const services = [

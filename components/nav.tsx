@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -20,9 +21,9 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-20 border-b border-border/60 bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <a href="/" className="text-sm font-semibold uppercase tracking-[0.28em]">
+        <Link href="/" className="text-sm font-semibold uppercase tracking-[0.28em]">
           Hayden Lin
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-3 text-sm md:flex">
@@ -73,7 +74,7 @@ export function Nav() {
           >
             <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-4 text-sm">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
@@ -83,7 +84,7 @@ export function Nav() {
                   {pathname === link.href && (
                     <span className="h-[2px] w-12 rounded bg-gradient-to-r from-accent via-foreground to-accent-2" />
                   )}
-                </a>
+                </Link>
               ))}
               <div className="pt-2">
                 <ThemeToggle />
@@ -99,7 +100,7 @@ export function Nav() {
 function NavLink({ link, active }: { link: { href: string; label: string }; active: boolean }) {
   return (
     <div className="group relative">
-      <a
+      <Link
         href={link.href}
         className="relative inline-flex items-center px-2 py-1 font-medium text-foreground/90 transition group-hover:text-foreground"
       >
@@ -112,7 +113,7 @@ function NavLink({ link, active }: { link: { href: string; label: string }; acti
             transition={{ type: "spring", stiffness: 260, damping: 22 }}
           />
         )}
-      </a>
+      </Link>
     </div>
   );
 }

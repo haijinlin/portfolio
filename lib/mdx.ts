@@ -6,6 +6,14 @@ import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
+type CompileOptions = NonNullable<Parameters<typeof compileMDX>[0]["options"]>;
+type RehypePlugins = NonNullable<NonNullable<CompileOptions["mdxOptions"]>["rehypePlugins"]>;
+
+const rehypePlugins = [
+  rehypeSlug,
+  [rehypeAutolinkHeadings, { behavior: "wrap" }],
+] as unknown as RehypePlugins;
+
 export type BaseFrontmatter = {
   title: string;
   summary?: string;
@@ -48,8 +56,7 @@ export async function getMdxContent(folder: string, slug: string) {
       parseFrontmatter: true,
       mdxOptions: {
         remarkPlugins: [remarkGfm],
-        // Cast rehype plugins to avoid type mismatches across versions
-        rehypePlugins: [rehypeSlug as unknown as any, [rehypeAutolinkHeadings as unknown as any, { behavior: "wrap" }]] as any
+        rehypePlugins,
       }
     }
   });

@@ -1,8 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ProjectCard } from "@/components/project-card";
 import { Section } from "@/components/section";
 import { getProjects } from "@/lib/projects";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Case studies covering LifeHub and seven practical workflow applications designed around real-world needs.",
+  alternates: { canonical: "/projects" },
+  openGraph: {
+    url: "/projects",
+    title: "Projects | Hayden Lin",
+    description: "Explore LifeHub and seven independently deployed workflow application case studies.",
+    images: [{ url: "/projects/screenshots/lifehub-dashboard.png", alt: "LifeHub dashboard" }],
+  },
+};
 
 export default async function ProjectsPage() {
   const projects = await getProjects();
@@ -29,7 +42,7 @@ export default async function ProjectsPage() {
             <div className="flex items-center gap-3"><Image src="/projects/lifehub.svg" alt="" width={52} height={52} className="h-13 w-13 rounded-xl" /><div><p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Private by design</p><h3 className="text-2xl font-semibold">LifeHub</h3></div></div>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">A secure personal platform that connects seven real workflow applications while keeping each app, database and access boundary independently reliable.</p>
             <div className="mt-5 grid grid-cols-2 gap-2 text-sm">{["CoCare", "RemindFlow", "HomeStock", "ApplyTrackr", "Workout", "WishTree", "GiftPocket"].map((name) => <span key={name} className="rounded-xl border border-border bg-background/40 px-3 py-2">{name}</span>)}</div>
-            <div className="mt-6 flex flex-wrap gap-3"><Link href="/projects/lifehub" className="rounded-full bg-foreground px-4 py-2 text-sm text-background">View case study →</Link><span className="rounded-full border border-border px-4 py-2 text-sm text-muted-foreground">Next.js · TypeScript · Prisma</span></div>
+            <div className="mt-6 flex flex-wrap gap-3"><Link href="/projects/lifehub" className="rounded-full bg-foreground px-4 py-2 text-sm text-background">View case study →</Link><span className="rounded-full border border-border px-4 py-2 text-sm text-muted-foreground">Next.js · TypeScript · Authentication</span></div>
           </div>
         </article>
       </section>}
