@@ -22,7 +22,7 @@ export function Section({
       className="mx-auto max-w-6xl px-5 py-12 sm:py-16"
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.01 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="flex flex-col gap-2 pb-6">
