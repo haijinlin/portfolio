@@ -41,7 +41,7 @@ export default async function ProjectsPage() {
                     src={preview?.src ?? project.image ?? "/projects/construction-workflow.png"}
                     alt={preview?.alt ?? `${project.title} workflow interface`}
                     fill
-                    className="object-cover object-top"
+                    className={preview?.fit === "contain" ? "object-contain object-center" : "object-cover object-top"}
                     sizes="(min-width: 1024px) 620px, 100vw"
                   />
                 </div>
