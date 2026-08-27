@@ -1,0 +1,86 @@
+---
+title: "HIT Logistics Hub — Courier Quoting & Dispatch Platform"
+summary: "A custom logistics platform for an Australian dental supplies business, connecting MYOB sales data with packing rules, multi-carrier quoting, consignment creation and thermal labels."
+tags: ["JavaScript", "PHP", "MySQL", "REST APIs", "MYOB AccountRight", "Workflow Automation", "Carrier APIs", "Thermal Labels"]
+date: "2026-08-27"
+category: "commercial"
+role: "Product Designer & Full Stack Developer"
+access: "private"
+image: "/projects/hit-logistics-hub.png"
+impact: "Replaces repeated courier-site data entry with one operational workflow tailored to the way the business actually packs and dispatches orders."
+gallery:
+  - src: "/projects/screenshots/logistics-shipment-workspace.png"
+    alt: "Synthetic shipment workspace showing a fictional MYOB invoice, receiver details and packing suggestions"
+    label: "Invoice and packing workflow"
+  - src: "/projects/screenshots/logistics-quote-comparison.png"
+    alt: "Synthetic GST-inclusive courier quote comparison using fictional prices and services"
+    label: "Multi-carrier quote comparison"
+  - src: "/projects/screenshots/logistics-shipment-history.png"
+    alt: "Synthetic shipment history showing fictional consignments, tracking numbers and label actions"
+    label: "Dispatch history and labels"
+---
+
+## Overview
+
+This is an internal business application I designed and built after observing the daily dispatch process at a Melbourne dental supplies company. Orders vary from one small parcel to mixed cartons and bulk product cases, and the best courier changes according to destination, dimensions, weight, service and the company's negotiated rates.
+
+Multi-carrier products such as Shippit demonstrated the value of consolidating this work, but a monthly subscription would still not model several company-specific packing and carrier decisions. I therefore designed a tailored platform around the team's existing MYOB, packing and courier workflows.
+
+The screenshots in this case study use entirely synthetic customers, invoice numbers, products, addresses, prices and shipment records. Carrier credentials, account numbers and commercial rate data are not shown.
+
+## The operational problem
+
+The dispatch team previously opened a spreadsheet to find carton dimensions and weights, re-entered the same package information into several courier websites, generated quotes independently and compared the results manually. Customer information also had to be copied from the accounting system or carrier address books.
+
+This created three recurring costs: repetitive entry, inconsistent carrier decisions and reliance on individual experience. A simple correction—such as changing one carton size—was also slow because the same details had to be updated across multiple websites.
+
+## One shipment record, multiple carrier decisions
+
+The application starts with a MYOB AccountRight item-invoice number. It retrieves the receiver, contact details, delivery instructions and purchased items, then keeps that information editable before any quote or consignment is created.
+
+The team enters or accepts the package plan once. That same structured shipment can be sent to Australia Post, Aramex/Fastway, MachShip and TNT without retyping dimensions and weights. Individual quote buttons support cases where only one carrier is relevant, while an all-carrier action produces a GST-inclusive comparison for price and transit review.
+
+## Packing intelligence without removing human judgement
+
+Packing is not a generic optimisation problem for this business. Full cartons have known quantities, dimensions and weights, while loose dental products may be combined in reusable supplier cartons or standard packing boxes.
+
+I modelled this with maintainable full-carton rules. When a MYOB line reaches a known carton quantity, the application suggests the correct number of cartons. Any remainder is kept in a clearly marked loose-items package for staff to size and weigh after packing. The suggestion is reviewable rather than automatic, preserving the packer's judgement for unusual orders.
+
+Package contents are carried into supported consignment and label workflows so staff can distinguish similar-looking cartons when applying a large batch of thermal labels.
+
+## From quote to consignment
+
+After a service is selected, a final review presents the receiver, delivery address, packages, service and GST-inclusive price. The application then creates the live consignment through the relevant carrier integration and opens the 4×6 label for printing.
+
+A shipment-history view allows the team to find consignments created by the platform, reopen labels and perform supported cancellations behind an administrator confirmation. Carrier-specific behaviour remains explicit because each provider has different service, manifest and cancellation rules.
+
+## Product decisions shaped by real operations
+
+- Separate carrier buttons remain available because the cheapest option is not always operationally appropriate.
+- Quote comparison normalises GST treatment so prices can be read consistently.
+- Full-carton suggestions and loose-item rows support mixed real-world packing rather than forcing a theoretical box plan.
+- Delivery instructions can be identified from a dedicated MYOB invoice line while remaining editable.
+- Labels use a 4×6 format because the warehouse already operates thermal printers and daily pickups.
+- Packing rules are managed centrally so the product catalogue can evolve without rebuilding the application.
+
+## Technical delivery
+
+- Responsive HTML, CSS and JavaScript interface for invoice lookup, packing, quoting, dispatch and history.
+- PHP service layer with MySQL-backed configuration and operational records.
+- MYOB AccountRight integration for item invoices, ship-to details, contacts and delivery instructions.
+- Carrier integrations for Australia Post, Aramex/Fastway, MachShip and TNT quoting and consignment workflows.
+- Server-managed packing-rule catalogue derived from operational carton data.
+- Production deployment behind HTTPS with secrets and carrier credentials retained on the server.
+
+## Validation and iteration
+
+I developed the platform incrementally alongside the people who actually quote, pack and dispatch orders. The first usable version automated package entry into existing courier websites. Direct APIs were then introduced one carrier at a time, followed by live consignment creation, label handling, shipment history, cancellation controls and packing suggestions.
+
+Testing against real operational scenarios exposed details that a generic shipping interface would miss: different carton treatment by carrier, collection cut-off times, GST presentation, label identification and the need to preserve manual packing decisions. Each iteration was validated against the carrier's own portal before being introduced into the working process.
+
+This project reinforced that useful automation does not remove human judgement. It removes repeated work, exposes the decision clearly and gives the operator control at the points where real-world exceptions matter.
+
+## AI-assisted development
+
+AI tools helped accelerate API exploration, repetitive interface implementation, diagnostic tooling and edge-case testing. I remained responsible for identifying the operational problem, observing staff workflows, defining product behaviour, integrating business systems, validating carrier results and deciding how automation should defer to human judgement.
+

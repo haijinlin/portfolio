@@ -7,13 +7,13 @@ import { getProjects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Case studies covering a commercial workflow platform, LifeHub and seven practical applications designed around real-world needs.",
+  description: "Case studies covering commercial workflow platforms, LifeHub and seven practical applications designed around real-world needs.",
   alternates: { canonical: "/projects" },
   openGraph: {
     url: "/projects",
     title: "Projects | Hayden Lin",
-    description: "Explore a commercial workflow platform, LifeHub and seven independently deployed application case studies.",
-    images: [{ url: "/projects/screenshots/lifehub-dashboard.png", alt: "LifeHub dashboard" }],
+    description: "Explore commercial workflow platforms, LifeHub and seven independently deployed application case studies.",
+    images: [{ url: "/projects/screenshots/logistics-quote-comparison.png", alt: "Synthetic HIT Logistics Hub courier quote comparison" }],
   },
 };
 
