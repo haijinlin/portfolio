@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Sample Follow-up application icon</title>
+  <defs>
+    <linearGradient id="bg" x1="64" y1="38" x2="458" y2="474" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0d365a"/><stop offset="1" stop-color="#176ea1"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="126" y1="141" x2="383" y2="374" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#65cbff"/><stop offset="1" stop-color="#8b2b92"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-opacity=".28"/></filter>
+  </defs>
+  <rect x="18" y="18" width="476" height="476" rx="112" fill="url(#bg)"/>
+  <path d="M18 335C126 292 215 374 494 279V494H18Z" fill="#071e36" opacity=".35"/>
+  <g filter="url(#shadow)">
+    <rect x="93" y="116" width="326" height="250" rx="35" fill="#fff"/>
+    <path d="M111 148 256 268 401 148" fill="none" stroke="url(#accent)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m111 333 104-94M401 333 297 239" fill="none" stroke="#dceaf3" stroke-width="22" stroke-linecap="round"/>
+  </g>
+  <circle cx="382" cy="377" r="73" fill="#32b56b" stroke="#fff" stroke-width="16"/>
+  <path d="M352 379h51m-17-18 18 18-18 18" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
