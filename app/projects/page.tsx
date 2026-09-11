@@ -79,7 +79,7 @@ export default async function ProjectsPage() {
       {platform && <section>
         <div className="mb-4"><p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Featured platform</p><h2 className="mt-1 text-2xl font-semibold">One connected product vision</h2></div>
         <article className="overflow-hidden rounded-3xl border border-border bg-card/60 shadow-sm lg:grid lg:grid-cols-[1.25fr_0.75fr]">
-          <div className="relative min-h-[340px] border-b border-border bg-slate-100 lg:border-b-0 lg:border-r"><Image src="/projects/screenshots/lifehub-dashboard.png" alt="LifeHub dashboard with seven connected modules" fill priority className="object-cover object-top" /></div>
+          <div className="relative min-h-[340px] border-b border-border bg-slate-100 lg:border-b-0 lg:border-r"><Image src="/projects/screenshots/lifehub-dashboard.png" alt="LifeHub dashboard with seven connected modules" fill priority className="object-contain object-center" /></div>
           <div className="flex flex-col justify-center p-7">
             <div className="flex items-center gap-3"><Image src="/projects/lifehub.svg" alt="" width={52} height={52} className="h-13 w-13 rounded-xl" /><div><p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Private by design</p><h3 className="text-2xl font-semibold">LifeHub</h3></div></div>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">A secure personal platform that connects seven real workflow applications while keeping each app, database and access boundary independently reliable.</p>
